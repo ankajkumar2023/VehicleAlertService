@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
@@ -66,6 +67,19 @@ public class VehicleAlertExceptionController {
 	
    }
 	
+	
+	@ExceptionHandler(value = {DataIntegrityViolationException.class})
+	public ResponseEntity<Object> dbException(DataIntegrityViolationException exception) {
+		
+		logger.debug(exception.getMessage());
+		ExceptionResponse exceptionError =null;
+	    exceptionError= new ExceptionResponse(VehicleAlertLiterals.DB_ERROR_CODE,VehicleAlertLiterals.DB_ERROR__MSG);
+		exceptionError.setDateTime(LocalDateTime.now());
+		return new ResponseEntity<>(exceptionError , HttpStatus.NOT_FOUND);
+	
+   }
+	
+		
 	@ExceptionHandler(value = {IllegalStateException.class})
 	public ResponseEntity<Object> genericException(VehicleAlertException exception) {
 		

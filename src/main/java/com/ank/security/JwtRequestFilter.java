@@ -5,6 +5,8 @@ import static com.ank.literals.VehicleAlertLiterals.INVALID_USER_CODE;
 import static com.ank.literals.VehicleAlertLiterals.INVALID_USER_MSG;
 import static com.ank.literals.VehicleAlertLiterals.TOKEN_EXPIRED_CODE;
 import static com.ank.literals.VehicleAlertLiterals.TOKEN_EXPIRED_MSG;
+import static com.ank.literals.VehicleAlertLiterals.TOKEN_SIGNATRE_ERROR_CODE;
+import static com.ank.literals.VehicleAlertLiterals.TOKEN_SIGNATRE_ERROR_MSG;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,6 +37,7 @@ import com.ank.exception.VehicleAlertException;
 import com.ank.repository.LoginRepository;
 
 import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.SignatureException;
 
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
@@ -95,6 +98,10 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 			logger.debug("Error ocuured in jwt filter");
 			resolver.resolveException(request, response, null,
 					new VehicleAlertException(exception.getErrorCode(), exception.getErrorMessage()));
+		}catch (SignatureException exception) {
+			logger.debug("Error ocuured in jwt filter");
+			resolver.resolveException(request, response, null,
+					 new VehicleAlertException(TOKEN_SIGNATRE_ERROR_CODE, TOKEN_SIGNATRE_ERROR_MSG));
 		} catch (Exception exception) {
 			logger.debug("Error ocuured in jwt filter");
 			resolver.resolveException(request, response, null,

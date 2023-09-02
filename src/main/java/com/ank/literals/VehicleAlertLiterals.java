@@ -34,12 +34,18 @@ public class VehicleAlertLiterals {
 	
 	public static final Integer TOKEN_EXPIRED_CODE=1005;
 	public static final String TOKEN_EXPIRED_MSG="Token has been expired.";
+	
+	public static final Integer TOKEN_SIGNATRE_ERROR_CODE=1006;
+	public static final String TOKEN_SIGNATRE_ERROR_MSG="JWT signature does not match locally computed signature.";
 
-	public static final Integer VEHICLE_NOT_EXIST_CODE=1006;
+	public static final Integer VEHICLE_NOT_EXIST_CODE=1007;
 	public static final String  VEHICLE_NOT_EXIST_MSG="Vehicle does not exist in system.";
 	
-	public static final Integer USER_NOT_EXIST_CODE=1007;
+	public static final Integer USER_NOT_EXIST_CODE=1008;
 	public static final String  USER_NOT_EXIST_MSG="User does not exist in system.";
+	
+	public static final Integer DB_ERROR_CODE=1009;
+	public static final String  DB_ERROR__MSG="DB exception occured.";
 	
 	
 

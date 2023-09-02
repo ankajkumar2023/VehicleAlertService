@@ -1,0 +1,75 @@
+post data 1-
+
+{
+        "userId": null,
+        "firstName": "Ramu",
+        "lastName": "singh",
+        "emailId": "abc@gmail.com",
+        "mobile": "8887766655",
+        "street": "test",
+        "city": "test",
+        "state": "test",
+        "country": "test",
+        "status": "active",
+        "createDate": "2023-08-27",
+        "modifiedDate": null,
+         "vehicles":null
+ }
+ 
+ post data 2-
+ 
+ {
+        "userId":null,
+        "firstName": "Ramu",
+        "lastName": "singh",
+        "emailId": "abc@gmail.com",
+        "mobile": "8887766655",
+        "street": "test",
+        "city": "test",
+        "state": "test",
+        "country": "test",
+        "status": "active",
+        "createDate":null,
+        "modifiedDate": null,
+ }
+ 
+ 
+ put data-
+  
+ {
+        "userId":1,
+        "firstName": "Ramu",
+        "lastName": "singh",
+        "emailId": "abc@gmail.com",
+        "mobile": "8887766655",
+        "street": "test",
+        "city": "test",
+        "state": "test",
+        "country": "test",
+        "status": "active",
+        "createDate": "2023-08-27",
+        "modifiedDate": null,
+ }
+ 
+ 
+ 
+ get Response data:-
+ 
+ {
+        "userId": 999,
+        "firstName": "RAJESH",
+        "lastName": "KUMAR",
+        "emailId": "abc@gmail.com",
+        "mobile": "86765434455",
+        "street": "chi",
+        "city": "Greater Noida",
+        "state": "UP",
+        "country": "INDIA",
+        "status": "ACTIVE",
+        "createDate": "2023-08-26T18:30:00.000+00:00",
+        "modifiedDate": null,
+        "vehicle":null
+}
+ 
+
+ 

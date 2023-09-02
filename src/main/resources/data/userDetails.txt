@@ -1,0 +1,34 @@
+Get Response data:-
+
+{
+    "data": {
+        "userId": 999,
+        "firstName": "RAJESH",
+        "lastName": "KUMAR",
+        "emailId": "abc@gmail.com",
+        "mobile": "86765434455",
+        "street": "chi",
+        "city": "Greater Noida",
+        "state": "UP",
+        "country": "INDIA",
+        "status": "ACTIVE",
+        "createDate": "2023-08-26T18:30:00.000+00:00",
+        "modifiedDate": null,
+        "vehicle": [
+            {
+                "vehicleId": 999,
+                "userId": 999,
+                "vehicleNumber": "UP16AX1235",
+                "vehicleRC": "UP-04567788888",
+                "vehicleType": "4-wheeler",
+                "yearOfRegistration": "2017",
+                "ownerName": "Rahul",
+                "mobileNumber": "7488899335",
+                "createDate": "2023-08-26T18:30:00.000+00:00",
+                "modifiedDate": "2023-08-26T18:30:00.000+00:00"
+            }
+        ]
+    },
+    "id": null,
+    "message": null
+}

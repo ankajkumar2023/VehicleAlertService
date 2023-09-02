@@ -1,0 +1,49 @@
+  post data
+  
+  {
+	"vehicleId": null,
+	"userId": 4,
+	 "vehicleNumber": "UP16AX12345",
+	 "vehicleRC": "UP-04567788888",
+	 "vehicleType": "4-wheeler",
+	 "yearOfRegistration":"2017",
+	 "ownerName": "Rahul",
+	 "mobileNumber": "7488899335",
+	 "createDate": null,
+	 "modifiedDate":null
+
+}
+
+
+
+put data :
+
+{
+	"vehicleId": 3,
+	"userId": 4,
+	 "vehicleNumber": "UP16AX12345",
+	 "vehicleRC": "UP-04567788888",
+	 "vehicleType": "4-wheeler",
+	 "yearOfRegistration":"2017",
+	 "ownerName": "Rahul",
+	 "mobileNumber": "7488899335",
+	 "createDate": "2023-08-27",
+	 "modifiedDate":null
+}
+
+
+get Response Data:-
+
+  {
+	"vehicleId": 3,
+	"userId": 4,
+	 "vehicleNumber": "UP16AX12345",
+	 "vehicleRC": "UP-04567788888",
+	 "vehicleType": "4-wheeler",
+	 "yearOfRegistration":"2017",
+	 "ownerName": "Rahul",
+	 "mobileNumber": "7488899335",
+	 "createDate": "2023-08-27",
+	 "modifiedDate": "2023-08-27"
+
+}

@@ -3,6 +3,7 @@ package com.ank.mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ank.domain.User;
 import com.ank.domain.Vehicle;
 import com.ank.model.VehicleModel;
 import com.ank.util.VehicleAlertUtil;
@@ -21,31 +22,29 @@ public class VehicleMapper {
 	public Vehicle mapModelToDomain(VehicleModel vehicleModel) {
 		
 		mapperFactory.classMap(VehicleModel.class, Vehicle.class)
-		.field("userId", "user.userId").byDefault().customize(new CustomMapper<VehicleModel, Vehicle>() {
-            @Override
-            public void mapAtoB(VehicleModel a, Vehicle b, MappingContext context) {
-            	
-            	b.setModifiedDate(VehicleAlertUtil.getCurrentTime());
-                if(a.getCreateDate() ==null) {
-            		b.setCreateDate(VehicleAlertUtil.getCurrentTime());
-               }
-            }    
-        }).register();
+		.byDefault().register();
 		BoundMapperFacade<VehicleModel, Vehicle> mapper= mapperFactory.getMapperFacade(VehicleModel.class, Vehicle.class);
 		Vehicle vehicleDomain = new Vehicle();
+		User user = new  User();
 		mapper.map(vehicleModel, vehicleDomain);
+		user.setUserId(vehicleModel.getUserId());
+		vehicleDomain.setUser(user);
+		vehicleDomain.setModifiedDate(VehicleAlertUtil.getCurrentTime());
+        if(vehicleModel.getCreateDate() ==null) {
+        	vehicleDomain.setCreateDate(VehicleAlertUtil.getCurrentTime());
+       }
 		return vehicleDomain;
 		
 	}		
 	
 	public VehicleModel mapDomainToModel(Vehicle vehicleDomain) {
 		
-		 mapperFactory.classMap(Vehicle.class, VehicleModel.class)
-		 .field("user.userId", "userId").byDefault().register();
+		 mapperFactory.classMap(Vehicle.class, VehicleModel.class).byDefault().register();
 		 BoundMapperFacade<Vehicle, VehicleModel> mapper= mapperFactory.getMapperFacade(Vehicle.class, VehicleModel.class);
 		 VehicleModel userModel = new VehicleModel();
 		 mapper.map(vehicleDomain, userModel);
-		 return userModel;
+		 userModel.setUserId(vehicleDomain.getUser().getUserId());
+		  return userModel;
 	}	
 	
 }

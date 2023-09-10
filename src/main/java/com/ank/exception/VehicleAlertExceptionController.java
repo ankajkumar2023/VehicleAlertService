@@ -2,17 +2,21 @@ package com.ank.exception;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.WebRequest;
 
 import com.ank.literals.VehicleAlertLiterals;
 import com.ank.model.ExceptionResponse;
@@ -94,5 +98,17 @@ public class VehicleAlertExceptionController {
 		return new ResponseEntity<>(exceptionError , HttpStatus.NOT_FOUND);
 	
    }
-
+	
+	@ExceptionHandler(value = {MethodArgumentNotValidException.class})
+	public ResponseEntity<Object> fieldException(MethodArgumentNotValidException exception) {
+		
+		logger.debug(exception.getMessage());
+		
+		ExceptionResponse exceptionError =null;
+			exceptionError= new ExceptionResponse(VehicleAlertLiterals.FIELD_VALIDATION_CODE,exception.getFieldError().getDefaultMessage());
+		exceptionError.setDateTime(LocalDateTime.now());
+		return new ResponseEntity<>(exceptionError , HttpStatus.BAD_REQUEST);
+	
+   }
+	
 }

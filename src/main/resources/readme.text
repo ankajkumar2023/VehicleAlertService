@@ -3,12 +3,20 @@
 
 //(exclude = {org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class})
 
+https://technotrampoline.com/articles/how-to-access-a-localhost-website-from-your-mobile-device/  ## QR code
+
+https://stackoverflow.com/questions/76278795/signup-signin-using-popup-window-react-spring  --cors
+
+https://www.youtube.com/watch?v=cMs0RirA-rU -----react environment
+
+https://www.springboottutorial.com/spring-boot-validation-for-rest-services ---validation
+
 if you not add static pwd in property files..spring security generate dynamic password in console
     defualt spring-security pwd = user
    # for static pwd
       spring.security.user.password=Test12345
 
-      
+      https://reflectoring.io/spring-cors/
       
       https://www.toptal.com/spring/spring-security-tutorial
       
@@ -23,4 +31,42 @@ if you not add static pwd in property files..spring security generate dynamic pa
       {
 		 "user":"ank",
 		 "password":"india@123"   
-		}
+	 }
+		
+		
+		/// ui
+		https://contactmentor.com/login-form-react-js-code/?expand_article=1
+		............................
+		
+		
+		export const userdetailData = {
+    userInfo: {
+        id: 1,
+        primaryMobile: 9998887776,
+        city: 'Noida',
+        district: 'GB',
+        state: 'UP',
+        country: 'India',
+        status: 'Active'
+    },
+    vehicleDetail: [
+        {
+            id: 1,
+            userId:1,
+            vehicleNumber: 'UP16AX12345',
+            vehicleRC: 'UP-04567788888',
+            ownerName: 'Ankaj',
+            mobileNumber: 8885554447
+        },
+        {
+             id: 2,
+            userId:1,
+            vehicleNumber: 'UP16AX19887',
+            vehicleRC: 'UP-02267658888',
+            ownerName: 'Akash',
+            mobileNumber: 5555554447
+        }
+    ]
+
+
+}

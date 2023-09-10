@@ -3,21 +3,27 @@ package com.ank.model;
 import java.util.Calendar;
 import java.util.Set;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 
 public class UserModel {
 	
 	private Long userId;
 	
 	@NotNull
-	@Size(min = 8, message = "name should have at least 8 characters")
+	@Size(max = 8,min=5, message = "Name should have between 5 to 8 characters")
 	private String firstName;
 	
+	@Size(max = 8,min=5, message = "Name should have at least 8 characters")
 	private String lastName;
 	
+	@Email
 	private String emailId;
 	
+	@NotNull
+	@Size(max = 10,min=10, message = "Mobile Number should have at least 10 digit")
 	private String mobile;
 	
 	private String street;
@@ -34,6 +40,8 @@ public class UserModel {
 	
 	private Calendar modifiedDate;
 	
+	@NotNull
+	@Size(min=6, message = "Password should have at least 6 characters")
 	private String password;
 	
 	private Set<VehicleModel> vehicle;

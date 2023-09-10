@@ -14,7 +14,7 @@ import com.ank.service.NotificationService;
 
 @RestController
 @RequestMapping("/ank/notification")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class NotificationController {
 	
 	@Autowired

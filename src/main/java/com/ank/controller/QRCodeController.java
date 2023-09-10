@@ -20,7 +20,7 @@ import com.google.zxing.WriterException;
 
 @RestController
 @RequestMapping("/ank/qrcode")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class QRCodeController {
 	
 	@Autowired

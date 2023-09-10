@@ -22,7 +22,9 @@ public class VehicleAlertLiterals {
 	
 	public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 	
-	public static final Integer GENERIC_CODE=1001;
+	public static final Integer GENERIC_CODE=1000;
+	
+	public static final Integer FIELD_VALIDATION_CODE=1001;
 	
 	public static final Integer AUTHENTICATION_FAIL_CODE=1002;
 	
@@ -45,7 +47,7 @@ public class VehicleAlertLiterals {
 	public static final String  USER_NOT_EXIST_MSG="User does not exist in system.";
 	
 	public static final Integer DB_ERROR_CODE=1009;
-	public static final String  DB_ERROR__MSG="DB exception occured.";
+	public static final String  DB_ERROR__MSG="DB error occured.";
 	
 	
 

@@ -3,6 +3,7 @@ package com.ank.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -47,7 +48,7 @@ public class SecurityConfig {
 		@Bean
 	    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 			
-			httpSecurity.antMatcher("/ank/**").csrf().disable().cors().disable().authorizeRequests().antMatchers("/ank/getToken","/ank/user/save","/ank/notification")
+			httpSecurity.antMatcher("/ank/**").csrf().disable().cors().and().authorizeRequests().antMatchers("/ank/getToken","/ank/user/save","/ank/notification")
 					.permitAll().anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint(authEntryPoint).and().sessionManagement()
 					.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 

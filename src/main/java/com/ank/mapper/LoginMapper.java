@@ -41,7 +41,7 @@ public  Login mapUserModelToLoginDomain(UserModel userModel) {
 		.field("firstName", "userName")
 		.field("password", "password")
 		.field("createDate", "createDate")
-		.byDefault().customize(new CustomMapper<UserModel, Login>() {
+		.customize(new CustomMapper<UserModel, Login>() {
             @Override
             public void mapAtoB(UserModel a, Login b, MappingContext context) {
             	
@@ -60,7 +60,7 @@ public  Login mapUserModelToLoginDomain(UserModel userModel) {
             		role.setCreateDate(a.getCreateDate());
             	}
             }
-        }).register();
+        }).byDefault().register();
 		 BoundMapperFacade<UserModel, Login> mapper= mapperFactory.getMapperFacade(UserModel.class, Login.class);
 		 Login loginDomain = new Login();
 		 mapper.map(userModel, loginDomain);

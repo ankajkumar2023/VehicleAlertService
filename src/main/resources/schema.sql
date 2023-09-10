@@ -2,15 +2,15 @@ CREATE TABLE user1 (
 
 	userId  INT NOT NULL PRIMARY KEY  auto_increment,
 	firstName VARCHAR(15) NOT NULL,
-	lastName VARCHAR(15) NOT NULL,
+	lastName VARCHAR(15) ,
 	emailId VARCHAR(50) NOT NULL,
-	mobile VARCHAR(10) NOT NULL,
-	street VARCHAR(20) NOT NULL,
-	city VARCHAR(25) NOT NULL,
-	state VARCHAR(15) NOT NULL,
-	country VARCHAR(10) NOT NULL,
-	status VARCHAR(8) NOT NULL,
-	createDate DATE NOT NULL,
+	mobile VARCHAR(10) ,
+	street VARCHAR(20) ,
+	city VARCHAR(25) ,
+	state VARCHAR(15) ,
+	country VARCHAR(10) ,
+	status VARCHAR(8) ,
+	createDate DATE ,
 	modifiedDate DATE
 );
 

@@ -23,7 +23,7 @@ import com.ank.valitaors.LoginValidation;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/ank/vehicle")
+@RequestMapping("/api/vehicle")
 public class VehicleController {
 	
 	@Autowired

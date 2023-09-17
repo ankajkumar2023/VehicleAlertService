@@ -19,7 +19,7 @@ import com.ank.service.QRCodeService;
 import com.google.zxing.WriterException;
 
 @RestController
-@RequestMapping("/ank/qrcode")
+@RequestMapping("/api/qrcode")
 @CrossOrigin(origins = "*")
 public class QRCodeController {
 	

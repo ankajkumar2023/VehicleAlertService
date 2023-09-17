@@ -61,7 +61,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 		try {
 
 			final String requestTokenHeader = request.getHeader("Authorization");
-
+			request.getMethod();
+			request.getContextPath();
+			request.getRequestURI();
 			String username = null;
 			String token = null;
 			if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
@@ -112,7 +114,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 	private UserDetails getUserDetails(String token, String username) {
 
 		Long refNumber = jwtToken.getUserRefNumberFromToken(token).longValue();
-		Login loginDomain = loginRepository.getLoginUserDetailByByIdAndUser(refNumber, username);
+		Login loginDomain = loginRepository.getLoginUserDetailByByUserIdAndUserName(refNumber, username);
 		
 		if (loginDomain != null) {
 			

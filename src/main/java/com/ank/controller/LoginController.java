@@ -19,7 +19,7 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 		
-	@RequestMapping(value = "/ank/getToken", method = RequestMethod.POST)
+	@RequestMapping(value = "/api/getToken", method = RequestMethod.POST)
 	public ResponseEntity<?> getAuthenticationToken(@RequestBody LoginModel loginModel) throws Exception {
 
 		final TokenModel token = loginService.getToken(loginModel);

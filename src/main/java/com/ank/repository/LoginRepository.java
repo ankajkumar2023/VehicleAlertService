@@ -21,6 +21,6 @@ public interface LoginRepository extends JpaRepository<Login, Long>{
 	@Query("SELECT l FROM Login l WHERE LOWER(l.loginId) = LOWER(:id)")
 	Login getLoginUserDetailByById(@Param("id") Long id);
 	
-	@Query("SELECT l FROM Login l WHERE LOWER(l.loginId) = LOWER(:id) and (l.userName) = LOWER(:name)")
-	Login getLoginUserDetailByByIdAndUser(@Param("id") Long id,@Param("name") String name);
+	@Query("SELECT l FROM Login l WHERE LOWER(l.userId) = LOWER(:id) and (l.userName) = LOWER(:name)")
+	Login getLoginUserDetailByByUserIdAndUserName(@Param("id") Long id,@Param("name") String name);
 }

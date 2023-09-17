@@ -13,7 +13,7 @@ import com.ank.model.NotificationModel;
 import com.ank.service.NotificationService;
 
 @RestController
-@RequestMapping("/ank/notification")
+@RequestMapping("/api/notification")
 @CrossOrigin(origins = "*")
 public class NotificationController {
 	

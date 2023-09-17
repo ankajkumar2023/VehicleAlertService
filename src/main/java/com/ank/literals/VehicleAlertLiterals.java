@@ -18,7 +18,9 @@ public class VehicleAlertLiterals {
 	
 	public static final String USER_REFERENCE_ID="referenceNumber";
 	
-	public static final String INACTIVE="inacative";
+	public static final String INACTIVE="InActive";
+	
+	public static final String ACTIVE="Active";
 	
 	public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 	

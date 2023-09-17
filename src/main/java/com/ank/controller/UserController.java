@@ -23,7 +23,7 @@ import com.ank.service.UserService;
 import com.ank.valitaors.LoginValidation;
 
 @RestController
-@RequestMapping("/ank")
+@RequestMapping("/api")
 @CrossOrigin(origins = "*")
 public class UserController {
 	
@@ -71,7 +71,7 @@ public class UserController {
 		
 		validateUserSession(request, userModel.getUserId());
 		
-		userService.saveUserInfo(userModel);
+		userService.updateUserInfo(userModel);
 		ResponseWrapper response = new ResponseWrapper();
 		response.setId(userModel.getUserId());
 		response.setMessage(VehicleAlertLiterals.USER_UPDATE_SUCCESS_MESSAGE);

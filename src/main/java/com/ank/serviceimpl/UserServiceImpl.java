@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ank.domain.Login;
 import com.ank.domain.User;
+import com.ank.literals.VehicleAlertLiterals;
 import com.ank.mapper.LoginMapper;
 import com.ank.mapper.UserMapper;
 import com.ank.model.UserModel;
@@ -44,6 +45,7 @@ public class UserServiceImpl implements UserService{
 	public Long saveUserInfo(UserModel userModel) {
 		
 		User userDomain= userMapper.mapModelToDomain(userModel);
+		userDomain.setStatus(VehicleAlertLiterals.ACTIVE);
 		userRepository.save(userDomain);
 		Long userId= userDomain.getUserId();
 		Login login =loginMapper.mapUserModelToLoginDomain(userModel);

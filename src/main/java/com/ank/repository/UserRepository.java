@@ -12,7 +12,7 @@ import com.ank.domain.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 	
 	@Modifying
-	@Query("UPDATE User u SET u.status='inactive' WHERE LOWER(u.userId) = LOWER(:id) and LOWER(u.firstName) = LOWER(:userName)")
+	@Query("UPDATE User u SET u.status='InActive' WHERE LOWER(u.userId) = LOWER(:id) and LOWER(u.firstName) = LOWER(:userName)")
 	void deleteUserDetailByById(@Param("id") Long id,@Param("userName") String userName);
 	
 	@Query("SELECT count(*) from User u WHERE LOWER(u.userId) = LOWER(:id)")

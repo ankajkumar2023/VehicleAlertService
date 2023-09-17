@@ -41,13 +41,13 @@ public class LoginServiceImpl implements LoginService {
 		
 		List<GrantedAuthority> roles = loginDomain.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getRole())).collect(Collectors.toList());
 		final UserDetails userDetails = new User(loginDomain.getUserName(), loginDomain.getPassword(),roles);
-		return new TokenModel(VehicleAlertUtil.getCurrentTime(),jwtToken.generateToken(userDetails, loginDomain.getLoginId()),loginDomain.getUserId());
+		return new TokenModel(VehicleAlertUtil.getCurrentTime(),jwtToken.generateToken(userDetails, loginDomain.getUserId()),loginDomain.getUserId());
 
 	}
 
 	@Override
 	public boolean isValidUser(Long id, String userName) {
-		Login loginDomain = loginRepository.getLoginUserDetailByByIdAndUser(id, userName);
+		Login loginDomain = loginRepository.getLoginUserDetailByByUserIdAndUserName(id, userName);
 		if (loginDomain != null) {
 			return true;
 		}

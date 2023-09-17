@@ -11,6 +11,8 @@ https://www.youtube.com/watch?v=cMs0RirA-rU -----react environment
 
 https://www.springboottutorial.com/spring-boot-validation-for-rest-services ---validation
 
+https://dev.to/kristijanfistrek/deploy-springboot-app-to-heroku-with-github-27ij ---github deployment
+
 if you not add static pwd in property files..spring security generate dynamic password in console
     defualt spring-security pwd = user
    # for static pwd
@@ -25,6 +27,8 @@ if you not add static pwd in property files..spring security generate dynamic pa
       https://stackoverflow.com/questions/58097705/rest-approaches-to-restrict-a-user-to-their-own-data
       
       https://www.geeksforgeeks.org/spring-boot-sending-email-via-smtp/
+      
+      https://www.youtube.com/watch?v=j-bVM7Bm6Rk  --delete cookie
       
       
       Login request-Post method

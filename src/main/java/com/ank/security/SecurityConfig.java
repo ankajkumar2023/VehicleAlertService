@@ -48,7 +48,7 @@ public class SecurityConfig {
 		@Bean
 	    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 			
-			httpSecurity.antMatcher("/ank/**").csrf().disable().cors().and().authorizeRequests().antMatchers("/ank/getToken","/ank/user/save","/ank/notification")
+			httpSecurity.antMatcher("/api/**").csrf().disable().cors().and().authorizeRequests().antMatchers("/api/getToken","/api/user/save","/api/notification")
 					.permitAll().anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint(authEntryPoint).and().sessionManagement()
 					.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
